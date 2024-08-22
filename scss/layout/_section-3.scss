@@ -1,0 +1,150 @@
+@use "../abstract";
+
+.section-3 {
+  position: relative;
+  @include abstract.custom-background-image("../../assets/img/background-2-01.png");
+  @include abstract.custom-flex(row, center, center, 0);
+
+  &__container {
+    margin: calc(5vw + 1px) 0;
+    font-size: 0.25rem;
+    color: abstract.$primary-color;
+
+    @media screen and (min-width: 600px) {
+      margin: calc(17vw + 1px);
+    }
+
+    @media screen and (min-width: 900px) {
+      margin: calc(19vw + 1px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin: calc(20vw + 1px);
+    }
+  }
+
+  &__content {
+    @include abstract.custom-flex(column, center, center, clamp(0.25rem, 1vw + 1px, 1rem));
+
+    @media screen and (min-width: 600px) {
+      gap: clamp(0.25rem, 2vw + 1px, 3rem);
+    }
+
+    @media screen and (min-width: 900px) {
+      gap: clamp(0.25rem, 2.5vw + 1px, 3rem);
+    }
+
+    &__info {
+      @include abstract.custom-flex(column, center, center, 0.5rem);
+      max-width: 60%;
+      padding: 0.5rem;
+      background-color: abstract.$accent-color;
+      border-radius: 5px;
+
+      @media screen and (min-width: 600px) {
+        max-width: 65%;
+      }
+
+      &-box {
+        @include abstract.custom-flex(row, center, flex-start, 0.5rem);
+        background-color: abstract.$white-color;
+        border-radius: 5px;
+        padding: 0.5rem;
+
+        @media screen and (min-width: 900px) {
+          gap: 1rem;
+        }
+
+        @media screen and (min-width: 1200px) {
+          gap: 1.25rem;
+        }
+
+        &__map-box {
+          @include abstract.custom-flex(column, center, flex-start, 0.25rem);
+          height: 100%;
+          gap: 0.5rem;
+          font-size: 0.25rem;
+
+          iframe {
+            width: calc(15vw + 1px);
+            height: calc(15vw + 1px);
+            border-radius: 5px;
+            box-shadow: 10px 10px 12px -7px rgba(0, 0, 0, 0.43);
+          }
+
+          button {
+            img {
+              object-fit: contain;
+              max-width: 0.5rem;
+              height: auto;
+            }
+          }
+        }
+
+        &__detail-box {
+          @include abstract.custom-flex(column, center, flex-start, 0.5rem);
+          color: abstract.$primary-color;
+          padding-top: calc(3vw + 1px);
+
+          h3 {
+            font-family: abstract.$font-family-primary;
+            color: abstract.$primary-color;
+            font-size: clamp(9px, 1vw + 1px, 3rem);
+            font-weight: 600;
+          }
+
+          table {
+            td {
+              color: abstract.$primary-color;
+              vertical-align: top;
+              font-size: clamp(6px, 1vw + 1px, 2rem);
+
+              span,
+              p,
+              strong {
+                line-height: 0.5rem;
+                color: abstract.$primary-color;
+                font-size: clamp(6px, 1vw + 1px, 2rem);
+              }
+              strong {
+                font-weight: bold;
+              }
+
+              hr {
+                margin: 0;
+              }
+
+              img {
+                object-fit: contain;
+                max-width: calc(1vw + 1px);
+                height: auto;
+              }
+            }
+            span {
+              color: abstract.$primary-color;
+            }
+            strong {
+              color: abstract.$primary-color;
+            }
+          }
+
+          @media only screen and (min-width: 600px) {
+            h3 {
+              font-size: clamp(9px, 1.5vw + 1px, 2rem);
+            }
+
+            table {
+              td {
+                span,
+                p,
+                strong {
+                  line-height: 1.5;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

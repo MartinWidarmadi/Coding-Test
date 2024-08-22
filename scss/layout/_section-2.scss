@@ -1,0 +1,65 @@
+@use "../abstract";
+
+.section-2 {
+  background-color: abstract.$primary-color;
+  @include abstract.custom-flex(row, center, center, 0);
+  padding: 2rem 0;
+
+  @media screen and (min-width: 900px) {
+    padding: 3rem 0;
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 4rem 0;
+  }
+
+  &__content {
+    @include abstract.custom-flex(column, center, center, 1rem);
+
+    &__title {
+      font-family: abstract.$font-family-primary;
+      color: abstract.$white-color;
+      font-weight: 400;
+      font-size: clamp(10px, 4vw + 1px, 2rem);
+    }
+
+    &__timer {
+      @include abstract.custom-flex(row, center, center, 1rem);
+
+      &__time-box {
+        @include abstract.custom-flex(column, center, center, 0);
+        background-color: abstract.$time-box-bg;
+        color: abstract.$accent-text-color;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 5px;
+
+        @media screen and (min-width: 600px) {
+          width: calc(10vw + 1px);
+          height: calc(10vw + 1px);
+        }
+
+        @media screen and (min-width: 600px) {
+          width: calc(9vw + 1px);
+          height: calc(9vw + 1px);
+        }
+
+        // @media screen and (min-width: 900px) {
+        //   width: 6rem;
+        //   height: 6rem;
+        // }
+
+        &__value {
+          font-family: abstract.$font-family-primary;
+          color: abstract.$accent-text-color;
+          font-size: clamp(10px, 4vw + 1px, 2rem);
+        }
+
+        &__label {
+          color: abstract.$accent-text-color;
+          font-size: clamp(8px, 2vw, 2rem);
+        }
+      }
+    }
+  }
+}

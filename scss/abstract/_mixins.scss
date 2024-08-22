@@ -1,0 +1,24 @@
+@use "../abstract/variables";
+
+@mixin custom-flex($direction, $justify, $align, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin custom-button($color, $padding, $border-radius) {
+  background-color: $color;
+  border-radius: $border-radius;
+  padding: $padding;
+  cursor: pointer;
+  color: variables.$white-color;
+}
+
+// temporary (will be deleted)
+@mixin custom-background-image($url) {
+  background-image: url($url);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}

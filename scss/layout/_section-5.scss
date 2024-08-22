@@ -1,0 +1,57 @@
+@use "../abstract";
+
+.section-5 {
+  background-color: abstract.$primary-color;
+  color: abstract.$white-color;
+  padding: 2rem 0;
+  @include abstract.custom-flex(column, center, center, 0.5rem);
+  text-align: center;
+
+  &__content {
+    @include abstract.custom-flex(column, center, center, 1rem);
+
+    &__text-container {
+      h3 {
+        font-size: clamp(10px, 2vw + 1px, 2rem);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+    }
+
+    select,
+    option {
+      font-size: clamp(8px, 1.5vw + 1px, 2rem);
+      border-radius: 2px;
+      width: clamp(30px, 5vw + 1px, 5rem);
+      height: clamp(20px, 3vw + 1px, 3rem);
+      color: abstract.$primary-color;
+      text-align: center;
+    }
+
+    select {
+      background-image: url("../assets/img/1x/arrow-down.png");
+      background-size: clamp(5px, 1vw + 1px, 2rem);
+      background-position: 15px;
+      background-repeat: no-repeat;
+      background-color: abstract.$white-color;
+      appearance: none;
+      padding-right: 10px;
+
+      @media only screen and (min-width: 600px) {
+        background-position: 20px;
+      }
+
+      @media only screen and (min-width: 900px) {
+        background-position: 30px;
+      }
+
+      @media only screen and (min-width: 1200px) {
+        background-position: 40px;
+      }
+    }
+
+    &__button-container {
+      @include abstract.custom-flex(row, center, center, 0.5rem);
+    }
+  }
+}

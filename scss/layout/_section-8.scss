@@ -1,0 +1,17 @@
+@use "../abstract";
+
+.section-8 {
+  @include abstract.custom-background-image("../../assets/img/background-4-01.png");
+  @include abstract.custom-flex(row, center, center, 0);
+
+  &__content {
+    @include abstract.custom-flex(column, center, center, 0.5rem);
+    margin: 30vw auto;
+    text-align: center;
+    max-width: 40%;
+
+    @media screen and (min-width: 900px) {
+      gap: 0.75rem;
+    }
+  }
+}

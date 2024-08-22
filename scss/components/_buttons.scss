@@ -1,0 +1,123 @@
+@use "../abstract";
+
+.btn {
+  @include abstract.custom-button(abstract.$primary-color, 0, 2px);
+  @include abstract.custom-flex(row, center, center, 0.25rem);
+  padding: clamp(2px, 1vw + 1px, 0.5rem);
+}
+
+.btn--accent {
+  background-color: abstract.$accent-color;
+  font-size: clamp(8px, 1vw + 1px, 1.5rem);
+  @media screen and (min-width: 600px) {
+    font-size: clamp(10px, 2vw + 1px, 1.5rem);
+  }
+
+  @media screen and (min-width: 900px) {
+    font-size: clamp(10px, 2.5vw + 1px, 1.5rem);
+  }
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.btn--small {
+  font-size: clamp(5px, 0.5vw + 1px, 1.5rem);
+}
+
+.btn--select {
+  font-size: clamp(8px, 1vw + 1px, 1.5rem);
+  min-width: calc(10vw + 1px);
+  min-height: calc(calc(10vw + 1px) / 2);
+  max-width: calc(10vw + 1px);
+  max-height: calc(calc(10vw + 1px) / 2);
+  padding: 1rem 1.5rem;
+  line-height: 1;
+  font-size: clamp(6px, 1vw + 1px, 1rem);
+
+  @media screen and (min-width: 600px) {
+    font-size: clamp(10px, 2vw + 1px, 1.5rem);
+    min-width: calc(15vw + 1px);
+    min-height: calc(calc(15vw + 1px) / 2);
+    max-width: calc(15vw + 1px);
+    max-height: calc(calc(15vw + 1px) / 2);
+  }
+
+  @media screen and (min-width: 900px) {
+    font-size: clamp(10px, 2.5vw + 1px, 1.5rem);
+    min-width: calc(15vw + 1px);
+    min-height: calc(calc(15vw + 1px) / 2);
+    max-width: calc(15vw + 1px);
+    max-height: calc(calc(15vw + 1px) / 2);
+  }
+}
+
+.btn--selected {
+  background-color: abstract.$accent-color;
+}
+
+.btn--unselected {
+  background-color: abstract.$accent-color-2;
+}
+
+// .button-primary-light {
+//   @include abstract.custom-flex(row, center, center, 0);
+//   @include abstract.custom-button(abstract.$accent-color, 0, 2px);
+//   min-width: 3.5rem;
+//   max-width: 3.5rem;
+//   min-height: 1.5rem;
+//   font-size: 0.5rem;
+//   font-weight: 300;
+//   text-align: center;
+//   line-height: 10px;
+//   cursor: pointer;
+// }
+
+// .button-primary-dark {
+//   @include abstract.custom-flex(row, center, center, 0);
+//   @include abstract.custom-button(abstract.$accent-color-2, 0, 2px);
+//   min-width: 3.5rem;
+//   max-width: 3.5rem;
+//   min-height: 1.5rem;
+//   font-size: 0.5rem;
+//   font-weight: 300;
+//   text-align: center;
+//   line-height: 10px;
+//   cursor: pointer;
+// }
+
+// .button-small {
+//   @include abstract.custom-flex(row, center, center, 0);
+//   @include abstract.custom-button(abstract.$accent-color-2, 0, 2px);
+//   color: abstract.$white-color;
+//   padding: 0.25rem 0.5rem;
+//   font-size: 0.5rem;
+//   font-weight: 300;
+//   text-align: center;
+//   line-height: 10px;
+//   cursor: pointer;
+// }
+
+// .button-large {
+//   @include abstract.custom-flex(row, center, center, 0);
+//   @include abstract.custom-button(abstract.$accent-color, 0, 2px);
+//   color: abstract.$white-color;
+//   padding: 0.25rem 0.5rem;
+//   font-weight: 300;
+//   text-align: center;
+//   line-height: 10px;
+//   cursor: pointer;
+// }
+
+// .button-full {
+//   @include abstract.custom-flex(row, center, center, 0);
+//   @include abstract.custom-button(abstract.$accent-color, 0, 2px);
+//   color: abstract.$white-color;
+//   padding: 0.5rem;
+//   font-weight: 300;
+//   text-align: center;
+//   line-height: 10px;
+//   cursor: pointer;
+//   width: 100%;
+// }

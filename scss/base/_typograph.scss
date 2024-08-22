@@ -1,0 +1,27 @@
+@use "../abstract/variables";
+
+body {
+  font-family: variables.$font-family-primary;
+  color: variables.$white-color;
+}
+
+h1 {
+  font-family: variables.$font-family-secondary;
+  font-size: clamp(0.5rem, 4vw + 0.5rem, 7rem);
+  color: variables.$accent-color;
+}
+
+h2 {
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  font-weight: 300;
+}
+
+h3 {
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  font-weight: 300;
+}
+
+p,
+span {
+  font-size: clamp(0.5rem, 1vw + 1rem, 3rem);
+}
